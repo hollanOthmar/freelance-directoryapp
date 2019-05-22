@@ -14,13 +14,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Blog',
+            name='Podcast',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('title', models.CharField(max_length=255)),
-                ('itemType', models.CharField(default='BLOG', editable=False, max_length=10)),
-                ('author', models.CharField(max_length=100)),
-                ('content', models.TextField(default='')),
+                ('itemType', models.CharField(default='PODCAST', editable=False, max_length=10)),
+                ('description', models.TextField(default='')),
+                ('duration', models.DurationField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('tags', models.ManyToManyField(blank=True, to='tags.Tag')),
             ],

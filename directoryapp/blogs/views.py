@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+# from .models import Blog
+
+# from tagging.views import TaggedObjectList
+
+# class TaggedBlogFilteredList(TaggedObjectList):
+#     queryset = Blog.objects.all()
