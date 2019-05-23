@@ -18,6 +18,7 @@ class App extends Component {
                     <Fragment>
                         <div className="container">
                             <Header />
+                            <div id="particles-js"></div>
                             <Dashboard />
                         </div>
                     </Fragment>

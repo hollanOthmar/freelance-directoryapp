@@ -210,3 +210,10 @@ input {
 form.form-inline {
     border:none !important;
 }
+
+#particles-js {
+    background: firebrick;
+    position:static;
+    z-index: -1;
+    height: 400px;
+}
