@@ -2,6 +2,7 @@ from django.db import models
 from tags.models import Tag
 import uuid
 
+# Podcast model
 class Podcast(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=255)
