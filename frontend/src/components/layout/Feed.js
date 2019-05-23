@@ -39,8 +39,8 @@ export class Feed extends Component {
         <div className="d-flex align-content-start flex-wrap">
             {/* <div className="card-deck"> */}
                 {this.props.feeds.map(feed => (
-                    <div key={feed.id} style={divStyle}>
-                        <div className="card border-light rounded-lg shadow m-3" style={cardStyle}>
+                    <div key={feed.id} className="col-md-6 col-lg-6 p-2">
+                        <div className="card border-light rounded-lg shadow w-100" style={cardStyle}>
                             <div className="card-header border-bottom-0">{feed.author}</div>
                             <div className="card-body">
                             <h4 className="card-title">
