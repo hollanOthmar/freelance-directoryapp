@@ -5,8 +5,10 @@ import { GET_BLOGS, GET_PODCASTS, GET_FEEDS, GET_TAGS, GET_FILTER } from './type
 export const getBlogs = () => dispatch => {
     axios.get('/api/blogs/')
         .then(res => {
+            console.log(res.data)
             dispatch({
-                type: GET_BLOGS,
+                // next: res.data.next,
+                type: GET_FEEDS,
                 payload: res.data
             });
         }).catch(err => console.log(err));
@@ -84,3 +86,14 @@ export const getSearch = (filter) => dispatch => {
       .catch(error => console.log(error));
 }
 
+// GET MORE
+export const getMore = (url) => dispatch => {
+    axios.get(url)
+        .then(res => {
+            dispatch({
+                next: res.data.next,
+                type: GET_FEEDS,
+                payload: res.data.results
+            });
+        }).catch(err => console.log(err));
+}

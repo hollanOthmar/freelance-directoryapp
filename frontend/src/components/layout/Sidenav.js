@@ -65,7 +65,7 @@ export class Sidenav extends Component {
                 {this.props.tags.map(tag => (
                     <li key={tag.pk} className="justify-content-between align-items-center">
                         <a href="#" id={tag.pk} onClick={this.onClick}>
-                            <span id={tag.pk} className="badge badge-secondary badge-pill">{tag.pk}</span>
+                            <span id={tag.pk} className="badge badge-secondary badge-pill" style={{backgroundColor:tag.tag_color}}>{tag.pk}</span>
                         </a>
                     </li>
                 ))}

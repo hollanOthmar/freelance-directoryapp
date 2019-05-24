@@ -7,6 +7,7 @@ class Tag(models.Model):
     tag_name = models.CharField(primary_key=True,max_length=255)
     # blogs = models.ManyToManyField(Blog,blank=True)
     # podcasts = models.ManyToManyField(Podcast,blank=True)
+    tag_color = models.CharField(max_length=7,default="#adb5bd")
 
     def __str__(self):
         """

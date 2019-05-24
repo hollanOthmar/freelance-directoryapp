@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getBlogs, getPodcasts, getFeeds } from '../../actions/feeds'
+import { getBlogs, getPodcasts, getFeeds, getMore } from '../../actions/feeds'
 
 const divStyle = {
     width : '50%'
@@ -12,6 +12,49 @@ const cardStyle = {
 };
   
 export class Feed extends Component {
+    /*constructor(props){
+        super(props)
+        // Sets up our initial state
+    // this.state = {
+    //     next: null,
+    //     feeds: [],
+    //   };
+        // Binds our scroll event handler
+    window.onscroll = () => {
+
+        // console.log(this.props.next)
+        // const {
+        //   state: {
+        //     next,
+        //   },
+        // } = this;
+  
+        // Bails early if:
+        // * there's an error
+        // * it's already loading
+        // * there's nothing left to load
+        if (this.props.next == null) return;
+
+        console.log(this.props.next)
+
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // you're at the bottom of the page
+            // alert('scrolling');
+            this.props.getMore(this.props.next);
+        }
+  
+        // Checks that the page has scrolled to the bottom
+        // if (
+        //   window.innerHeight + document.documentElement.scrollTop
+        //   === document.documentElement.offsetHeight
+        // ) {
+        // //   this.props.getMore(this.props.next);
+        // // console.log(this.props.next)
+        // alert('scrolling')
+        // }
+      };
+    } */
+
     static propTypes = {
         feeds: PropTypes.array.isRequired,
         // getBlogs:PropTypes.func.isRequired,
@@ -20,7 +63,7 @@ export class Feed extends Component {
     }
 
     componentDidMount() {
-        //this.props.getBlogs()
+        // this.props.getBlogs()
         // this.props.getPodcasts()
         this.props.getFeeds()
     }
@@ -66,7 +109,8 @@ export class Feed extends Component {
 }
 
 const mapStateToProps = state => ({
-    feeds: state.feeds.feeds
+    feeds: state.feeds.feeds,
+    // next: state.feeds.next
 });
 
-export default connect(mapStateToProps, {getFeeds})(Feed);
+export default connect(mapStateToProps, {getFeeds,getMore,getBlogs})(Feed);

@@ -1,6 +1,8 @@
 import { GET_BLOGS, GET_PODCASTS, GET_FEEDS } from '../actions/types.js';
+// import { stat } from 'fs';
 
 const initialState = {
+    // next: null,
     feeds: []
 }
 
@@ -21,7 +23,10 @@ export default function(state = initialState,action) {
         case GET_FEEDS:
             return {
                 ...state,
+                // next: action.next,
                 feeds: action.payload
+                // feeds: state.feeds.concat(action.payload)
+                // feeds: [...state.feeds, action.payload]
             };
         
         default:
