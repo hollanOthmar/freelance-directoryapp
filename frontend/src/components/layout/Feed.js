@@ -8,7 +8,7 @@ const divStyle = {
   };
 
 const cardStyle = {
-    minHeight: '25rem'
+    minHeight: '10rem'
 };
   
 export class Feed extends Component {
